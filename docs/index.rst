@@ -38,15 +38,17 @@ Users Manual
 .. toctree::
    :maxdepth: 2
 
-   installation
-   intro
+   user_guide/index
+   examples
    notebooks
    cloud
    ui
-   lca
    faq
    contributing
    credits
+   manualapi
+   whatsnew
+
 
 Technical Reference
 ===================

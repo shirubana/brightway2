@@ -32,7 +32,20 @@ needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.mathjax']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.mathjax', 'sphinx.ext.todo',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.extlinks',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.autosummary',
+    'IPython.sphinxext.ipython_directive',
+    'IPython.sphinxext.ipython_console_highlighting',
+    'sphinx.ext.doctest',
+    'nbsphinx',
+    'sphinx_gallery.load_style',]
 
 # Load mathjax through https so it works on RTD/Chrome. See:
 # http://sphinx-doc.org/ext/math.html
@@ -95,20 +108,39 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'furo'
+html_theme = "pydata_sphinx_theme"
+
+# https://pydata-sphinx-theme.rtfd.io/en/latest/user_guide/configuring.html
 html_theme_options = {
-    "sidebar_hide_name": True,
-    "light_logo": "bw-logo-light.png",
-    "dark_logo": "bw-logo-dark.png",
-    "light_css_variables": {
-        "color-brand-primary": "#288679",
-        "color-brand-content": "#288679",
-    },
-    "dark_css_variables": {
-        "color-brand-primary": "#9ADAD2",
-        "color-brand-content": "#9ADAD2",
-    },
+    "github_url": "https://github.com/brightway-lca",
+    "favicons": [
+        {"rel": "icon", "sizes": "16x16", "href": "favicon-16x16.png"},
+        {"rel": "icon", "sizes": "32x32", "href": "favicon-32x32.png"},
+    ],
+    "icon_links": [
+        {
+            "name": "StackOverflow",
+            "url": "https://stackoverflow.com/questions/tagged/brightway",
+            "icon": "fab fa-stack-overflow",
+        },
+        {
+            "name": "PyPI",
+            "url": "https://pypi.org/project/brightway2",
+            "icon": "fab fa-python",
+        },
+    ],
+    #"use_edit_page_button": True,
+    "show_toc_level": 1,
+    "footer_items": ["copyright", "sphinx-version", "sidebar-ethical-ads"],
+    "left_sidebar_end": [],
 }
+
+# The name of an image file (relative to this directory) to place at the top
+# of the sidebar.
+html_logo = 'images/bw2logo.png'
+
+# do not execute notebooks for gallery
+# nbsphinx_execute = 'never'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
